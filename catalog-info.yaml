@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mx09lporq-nodejs-gitops
+  description: This is GitOps manifest for mx09lporq-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mx09lporq-nodejs
+    backstage.io/kubernetes-id: mx09lporq-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mx09lporq-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mx09lporq-nodejs
